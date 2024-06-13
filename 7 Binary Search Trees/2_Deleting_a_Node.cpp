@@ -14,16 +14,7 @@ public:
     }
 };
 
-int minValue(Node* root) {
-    Node* temp = root;
-    if (temp == NULL) {
-        return -1;
-    }
-    while (temp->left != NULL) {
-        temp = temp->left;
-    }
-    return temp->data;
-}
+
 
 int maxValue(Node* root) {
     Node* temp = root;
@@ -79,20 +70,7 @@ void levelOrder(Node* root) {
     }
 }
 
-Node* findNode(Node* root, int p) {
-    if (root == NULL) {
-        return NULL;
-    }
-    if (p == root->data) {
-        return root;
-    }
-    if (p > root->data) {
-        return findNode(root->right, p);
-    }
-    else {
-        return findNode(root->left, p);
-    }
-}
+
 
 Node* deleteNode(Node* root, int target) {
     if (root == NULL) {
